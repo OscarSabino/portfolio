@@ -1,17 +1,17 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-scroll';
-import { Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { Github, Linkedin, Mail, ExternalLink, Skateboard, Code, Gamepad2 } from 'lucide-react';
 
 const projects = [
-  { title: 'E-commerce App', description: 'Tienda online completa con React y Node.js', tags: ['React', 'Node.js', 'MongoDB'] },
-  { title: 'Task Manager', description: 'Aplicación de gestión de tareas en tiempo real', tags: ['Vue.js', 'Firebase', 'Tailwind'] },
-  { title: 'Portfolio Dashboard', description: 'Panel de administración con analytics', tags: ['Next.js', 'TypeScript', 'Prisma'] },
+  { title: 'Proyecto en desarrollo', description: 'Próximamente...', tags: ['React', 'Node.js'], icon: <Code size={48} /> },
+  { title: 'Coming soon', description: ' Ideas en mente', tags: ['Vue.js', 'Firebase'], icon: <Gamepad2 size={48} /> },
+  { title: 'Por definir', description: 'Estoy abierto a propuestas', tags: ['Next.js', 'TypeScript'], icon: <Skateboard size={48} /> },
 ];
 
 const skills = [
-  { category: 'Frontend', items: ['React', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Next.js'] },
-  { category: 'Backend', items: ['Node.js', 'Python', 'PostgreSQL', 'MongoDB', 'GraphQL'] },
-  { category: 'Tools', items: ['Git', 'Docker', 'AWS', 'Figma', 'CI/CD'] },
+  { category: 'Frontend', items: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind'] },
+  { category: 'Backend', items: ['Node.js', 'Python', 'SQL', 'MongoDB'] },
+  { category: 'En aprendizaje', items: ['TypeScript', 'Git', 'Docker', 'APIs'] },
 ];
 
 function App() {
@@ -19,7 +19,7 @@ function App() {
     <div className="min-h-screen bg-[#0a0a0a]">
       <nav className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/10">
         <div className="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-          <span className="text-xl font-bold gradient-text">Portfolio</span>
+          <span className="text-xl font-bold gradient-text">Oscar Ubiera</span>
           <div className="flex gap-6">
             {['Sobre mí', 'Proyectos', 'Habilidades', 'Contacto'].map((item) => (
               <Link
@@ -50,16 +50,22 @@ function App() {
             className="w-32 h-32 mx-auto mb-8 rounded-full bg-gradient-to-br from-indigo-500 via-purple-500 to-pink-500 p-1"
           >
             <div className="w-full h-full rounded-full bg-gray-900 flex items-center justify-center">
-              <span className="text-4xl">👨‍💻</span>
+              <Skateboard size={48} className="text-indigo-400" />
             </div>
           </motion.div>
           <h1 className="text-5xl md:text-7xl font-bold mb-6">
-            Hola, soy <span className="gradient-text">Tu Nombre</span>
+            Hola, soy <span className="gradient-text">Oscar Ubiera</span>
           </h1>
-          <p className="text-xl md:text-2xl text-gray-400 mb-8">
-            Desarrollador Full Stack apasionado por crear experiencias digitales únicas
+          <p className="text-xl md:text-2xl text-gray-400 mb-4">
+            Estudiante en Los Boscos 🎓
           </p>
-          <div className="flex gap-4 justify-center">
+          <p className="text-lg text-gray-500 mb-4">
+            Me gusta el skate 🛹 y quiero dedicarme a la programación 💻
+          </p>
+          <p className="text-lg text-indigo-400">
+            Aprendiendo y creando cosas nuevas cada día
+          </p>
+          <div className="flex gap-4 justify-center mt-8">
             <a href="#" className="p-3 bg-white/10 rounded-full hover:bg-white/20 transition-colors">
               <Github size={24} />
             </a>
@@ -87,8 +93,8 @@ function App() {
                 transition={{ delay: index * 0.2 }}
                 className="card-hover bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl p-6 border border-white/10"
               >
-                <div className="h-48 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-xl mb-4 flex items-center justify-center">
-                  <span className="text-6xl">🚀</span>
+                <div className="h-48 bg-gradient-to-br from-indigo-500/20 to-purple-500/20 rounded-xl mb-4 flex items-center justify-center text-indigo-400">
+                  {project.icon}
                 </div>
                 <h3 className="text-xl font-bold mb-2">{project.title}</h3>
                 <p className="text-gray-400 mb-4">{project.description}</p>
@@ -145,7 +151,7 @@ function App() {
             Estoy siempre abierto a nuevas oportunidades y colaboraciones
           </p>
           <a
-            href="mailto:tu@email.com"
+            href="mailto:oscar.ubiera@email.com"
             className="inline-flex items-center gap-3 px-8 py-4 bg-gradient-to-r from-indigo-500 to-purple-500 rounded-full text-lg font-semibold hover:opacity-90 transition-opacity"
           >
             <Mail size={20} />
@@ -155,7 +161,9 @@ function App() {
       </section>
 
       <footer className="py-8 text-center text-gray-500 border-t border-white/10">
-        <p>© 2024 Mi Portfolio. Todos los derechos reservados.</p>
+        <p className="flex items-center justify-center gap-2">
+          © 2024 Oscar Ubiera. Todos los derechos reservados. <Skateboard size={16} />
+        </p>
       </footer>
     </div>
   );
