@@ -12,6 +12,14 @@ const projects = [
     link: '#'
   },
   { 
+    title: 'Juego Plataformas', 
+    description: 'Juego de plataformas 2D desarrollado en Unity. Salta, recolecta y supera niveles.', 
+    tags: ['Unity', 'C#', 'GameDev'], 
+    icon: <Gamepad2 size={48} />,
+    color: 'from-orange-500/20 to-red-500/20',
+    link: '#'
+  },
+  { 
     title: 'Calculadora IMC', 
     description: 'Herramienta para calcular el índice de masa corporal con diseño moderno.', 
     tags: ['React', 'Tailwind'], 
